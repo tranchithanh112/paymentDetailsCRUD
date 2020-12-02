@@ -1,0 +1,20 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="text" name="pmId" [value]="service.formData.pmId" [disabled]="true">
+  <div class="form-group">
+    <input name="cardOwnerName" #cardOwnerName="ngModel" [(ngModel)]="service.formData.cardOwnerName"
+      placeholder="Card Owner Name" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <input name="cardNumber" #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber" placeholder="Card Number"
+      class="form-control" required maxlength="16" minlength="16">
+  </div>
+  <div class="form-group">
+    <input name="expirationDate" #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate"
+      placeholder="Expiration Date" class="form-control" required maxlength="5" minlength="5">
+  </div>
+  <div class="form-group">
+    <input name="cVV" #cardOwnerName="ngModel" [(ngModel)]="service.formData.cVV" placeholder="CVV" required
+      maxlength="3" minlength="3" class="form-control">
+  </div>
+  <button type="submit" [disabled]="form.invalid" class="btn btn-block btn-lg btn-success">Submit</button>
+</form>
